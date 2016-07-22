@@ -1,0 +1,9 @@
+{
+  "name" : "RealTimeServer",
+  "description" : "sending data",
+  "version" : "0.0.1",
+  "dependencies" : {
+    "socket.io",
+    "redis"
+  }
+}

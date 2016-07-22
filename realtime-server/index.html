@@ -1,0 +1,21 @@
+<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script>
+  var socket = io('http://localhost:3001');
+  socket.on('rt-change', function (data) {
+    console.log(data);
+    var user = data.obj;
+    list_dom = $('#user')
+    list_dom.append("<tr><td>"+user.id+"</td><td>"+user.name+"</td></tr>");
+    // socket.emit('my other event', { my: 'data' });
+  });
+</script>
+
+<table>
+	<thead>
+		<th>ID</th>
+		<th>User</th>	
+	</thead>
+	<tbody id="user"> 		
+	</tbody>
+</table>
